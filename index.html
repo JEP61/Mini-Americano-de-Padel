@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mini Americano</title>
+<link rel="manifest" href="manifest.json" />
+<link rel="icon" href="icon.png" />
+<link rel="apple-touch-icon" href="icon.png" />
+<meta name="theme-color" content="#0b1220" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="wrap">
+<header class="header">
+<div class="logo">🎾</div>
+<h1>Mini Americano</h1>
+<p class="sub">Suma <b>juegos</b> como puntos. Si hay empate, anota el tie-break 7-6 (o 6-7). Un juego incompleto no cuenta.</p>
+<div class="actions">
+<button id="btnReset" class="btn ghost">🧹 Reiniciar</button>
+<button id="btnClear" class="btn ghost">🗑️ Borrar datos</button>
+<button id="btnCSV" class="btn">⬇️ CSV</button>
+</div>
+</header>
+<section>
+<h2>Nombre de Parejas</h2>
+<input id="t1" placeholder="Pareja 1" />
+<input id="t2" placeholder="Pareja 2" />
+<input id="t3" placeholder="Pareja 3" />
+<input id="t4" placeholder="Pareja 4" />
+</section>
+<h2>Turnos</h2>
+<section class="turno"><div class="turno-head"><span class="pill">Turno 1</span><span class="sub">2 partidos simultáneos</span></div>
+<div class="grid-2">
+<div class="card"><h3>Partido A</h3><div class="vs"><div class="side"><input id="m1a" inputmode="numeric"><div id="m1a_name" class="label">Pareja 1</div></div><span class="mid">vs</span><div class="side"><input id="m1b" inputmode="numeric"><div id="m1b_name" class="label">Pareja 2</div></div></div></div>
+<div class="card"><h3>Partido B</h3><div class="vs"><div class="side"><input id="m2a" inputmode="numeric"><div id="m2a_name" class="label">Pareja 3</div></div><span class="mid">vs</span><div class="side"><input id="m2b" inputmode="numeric"><div id="m2b_name" class="label">Pareja 4</div></div></div></div>
+</div></section>
+<section class="turno"><div class="turno-head"><span class="pill">Turno 2</span><span class="sub">2 partidos simultáneos</span></div>
+<div class="grid-2">
+<div class="card"><h3>Partido A</h3><div class="vs"><div class="side"><input id="m3a" inputmode="numeric"><div id="m3a_name" class="label">Pareja 1</div></div><span class="mid">vs</span><div class="side"><input id="m3b" inputmode="numeric"><div id="m3b_name" class="label">Pareja 3</div></div></div></div>
+<div class="card"><h3>Partido B</h3><div class="vs"><div class="side"><input id="m4a" inputmode="numeric"><div id="m4a_name" class="label">Pareja 2</div></div><span class="mid">vs</span><div class="side"><input id="m4b" inputmode="numeric"><div id="m4b_name" class="label">Pareja 4</div></div></div></div>
+</div></section>
+<section class="turno"><div class="turno-head"><span class="pill">Turno 3</span><span class="sub">2 partidos simultáneos</span></div>
+<div class="grid-2">
+<div class="card"><h3>Partido A</h3><div class="vs"><div class="side"><input id="m5a" inputmode="numeric"><div id="m5a_name" class="label">Pareja 1</div></div><span class="mid">vs</span><div class="side"><input id="m5b" inputmode="numeric"><div id="m5b_name" class="label">Pareja 4</div></div></div></div>
+<div class="card"><h3>Partido B</h3><div class="vs"><div class="side"><input id="m6a" inputmode="numeric"><div id="m6a_name" class="label">Pareja 2</div></div><span class="mid">vs</span><div class="side"><input id="m6b" inputmode="numeric"><div id="m6b_name" class="label">Pareja 3</div></div></div></div>
+</div></section>
+<section>
+<h2>Tabla de posiciones</h2>
+<button id="btnRecalc" class="btn">↻ Recalcular posiciones</button>
+<div class="table-wrap"><table id="tabla"><thead><tr><th>#</th><th>Pareja</th><th>PJ</th><th>JG</th><th>JP</th><th>Dif</th><th>Puntos</th></tr></thead><tbody></tbody></table></div>
+<ul class="notes"><li>Si hay empate 6-6, registra el tie-break como 7-6 (o 6-7).</li><li>La app guarda automáticamente tus datos y los recupera al volver.</li><li>Botón CSV descarga el resumen (nombres, JG, JP, Dif y Puntos).</li></ul>
+<p class="foot">Mini Americano · Instálala desde Safari: Compartir → “Añadir a pantalla de inicio”.</p>
+</section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
