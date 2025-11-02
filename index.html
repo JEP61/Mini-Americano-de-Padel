@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mini Americano</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
+  <meta name="theme-color" content="#0b1220">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="logo">🎾</div>
+    <h1>Mini Americano</h1>
+    <p class="subtitle">
+      Suma <strong>juegos</strong> como puntos. Si hay empate, anota el tie‑break 7‑6 (o 6‑7).
+      Un juego incompleto no cuenta.
+    </p>
+    <div class="actions">
+      <button id="resetBtn" class="btn ghost">🧹 Reiniciar</button>
+      <button id="clearBtn" class="btn warning">🗑️ Borrar datos</button>
+      <button id="csvBtn" class="btn">⬇️ CSV</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Nombre de Parejas</h2>
+      <div class="grid grid-2">
+        <input id="p1" class="input" placeholder="Pareja 1" />
+        <input id="p2" class="input" placeholder="Pareja 2" />
+        <input id="p3" class="input" placeholder="Pareja 3" />
+        <input id="p4" class="input" placeholder="Pareja 4" />
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Turnos</h2>
+
+      <!-- Turno 1 -->
+      <h3>Turno 1 · 2 partidos simultáneos</h3>
+      <div class="matches">
+        <div class="match">
+          <h4>Partido A</h4>
+          <div class="teams">
+            <div class="team"><span id="t1a_n1" class="team-name">Pareja 1</span><input id="t1a_s1" inputmode="numeric" class="score" /></div>
+            <div class="vs">vs</div>
+            <div class="team"><span id="t1a_n2" class="team-name">Pareja 2</span><input id="t1a_s2" inputmode="numeric" class="score" /></div>
+          </div>
+        </div>
+        <div class="match">
+          <h4>Partido B</h4>
+          <div class="teams">
+            <div class="team"><span id="t1b_n1" class="team-name">Pareja 3</span><input id="t1b_s1" inputmode="numeric" class="score" /></div>
+            <div class="vs">vs</div>
+            <div class="team"><span id="t1b_n2" class="team-name">Pareja 4</span><input id="t1b_s2" inputmode="numeric" class="score" /></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Turno 2 -->
+      <h3>Turno 2 · 2 partidos simultáneos</h3>
+      <div class="matches">
+        <div class="match">
+          <h4>Partido A</h4>
+          <div class="teams">
+            <div class="team"><span id="t2a_n1" class="team-name">Pareja 1</span><input id="t2a_s1" inputmode="numeric" class="score" /></div>
+            <div class="vs">vs</div>
+            <div class="team"><span id="t2a_n2" class="team-name">Pareja 3</span><input id="t2a_s2" inputmode="numeric" class="score" /></div>
+          </div>
+        </div>
+        <div class="match">
+          <h4>Partido B</h4>
+          <div class="teams">
+            <div class="team"><span id="t2b_n1" class="team-name">Pareja 2</span><input id="t2b_s1" inputmode="numeric" class="score" /></div>
+            <div class="vs">vs</div>
+            <div class="team"><span id="t2b_n2" class="team-name">Pareja 4</span><input id="t2b_s2" inputmode="numeric" class="score" /></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Turno 3 -->
+      <h3>Turno 3 · 2 partidos simultáneos</h3>
+      <div class="matches">
+        <div class="match">
+          <h4>Partido A</h4>
+          <div class="teams">
+            <div class="team"><span id="t3a_n1" class="team-name">Pareja 1</span><input id="t3a_s1" inputmode="numeric" class="score" /></div>
+            <div class="vs">vs</div>
+            <div class="team"><span id="t3a_n2" class="team-name">Pareja 4</span><input id="t3a_s2" inputmode="numeric" class="score" /></div>
+          </div>
+        </div>
+        <div class="match">
+          <h4>Partido B</h4>
+          <div class="teams">
+            <div class="team"><span id="t3b_n1" class="team-name">Pareja 2</span><input id="t3b_s1" inputmode="numeric" class="score" /></div>
+            <div class="vs">vs</div>
+            <div class="team"><span id="t3b_n2" class="team-name">Pareja 3</span><input id="t3b_s2" inputmode="numeric" class="score" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Tabla de posiciones</h2>
+      <button id="recalcBtn" class="btn">↻ Recalcular posiciones</button>
+      <div class="table-wrap">
+        <table id="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Pareja</th>
+              <th>PJ</th>
+              <th>JG</th>
+              <th>JP</th>
+              <th>Dif</th>
+              <th>Puntos</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <ul class="notes">
+        <li>Si hay empate 6‑6, registra el tie‑break como 7‑6 (o 6‑7).</li>
+        <li>La app guarda automáticamente tus datos y los recupera al volver.</li>
+        <li>Botón CSV descarga el resumen (nombres, JG, JP, Dif y Puntos).</li>
+      </ul>
+      <p class="foot">Mini Americano · Instálala desde Safari: Compartir →
+        “Añadir a pantalla de inicio”.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
