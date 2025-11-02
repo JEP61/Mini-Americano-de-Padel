@@ -1,0 +1,38 @@
+body {
+  background-color: #0d1117;
+  color: #e6edf3;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+.container { max-width: 640px; margin: auto; }
+input {
+  background: #161b22;
+  border: 1px solid #30363d;
+  color: white;
+  padding: 8px 10px;
+  margin: 6px 0;
+  border-radius: 8px;
+  width: 90%;
+}
+button {
+  margin: 6px 4px;
+  padding: 10px 14px;
+  background-color: #238636;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover { background-color: #2ea043; }
+#matches > div {
+  background: #0f1420;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 8px 0;
+}
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+th, td { border: 1px solid #30363d; padding: 6px; }
+.notes { font-size: .9em; color: #8b949e; margin-top: 14px; }
